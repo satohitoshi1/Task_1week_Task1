@@ -2,7 +2,6 @@ import webbrowser
 import time
 import pyperclip
 import pyautogui as pg
-from PIL import ImageGrab
 
 
 interval = 2
@@ -16,9 +15,10 @@ pyperclip.copy("平泉町 観光")  # クリップボードに日本語のせる
 pg.hotkey("ctrl", "v")  # pyperclip.paste() なぜか貼ってくれない
 pg.press("enter")  # ダサくないらしい
 time.sleep(interval)
-screenshot = ImageGrab.grab()
-screenshot.save("screenshot.jpg")
-pg.click(1345, 22)  # ダサい
+# screenshot = ImageGrab.grab()
+screen_shot = pg.screenshot()
+screen_shot.save("screenshot.jpg")
+# pg.click(1345, 22)  # ダサい
 
 
 # Selenium用 ボツ
